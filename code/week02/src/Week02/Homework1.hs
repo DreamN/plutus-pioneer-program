@@ -32,7 +32,7 @@ import           Text.Printf          (printf)
 {-# INLINABLE mkValidator #-}
 -- This should validate if and only if the two Booleans in the redeemer are equal!
 mkValidator :: () -> (Bool, Bool) -> ScriptContext -> Bool
-mkValidator _ (b1, b2) _ = traceIfFalse "wrong redeemer" $ b1 == b2 -- FIX ME!
+mkValidator _ (b1, b2) _ = traceIfFalse "wrong redeemer" $ b1 == b2
 
 data Typed
 instance Scripts.ValidatorTypes Typed where
@@ -47,13 +47,13 @@ typedValidator = Scripts.mkTypedValidator @Typed
         wrap = Scripts.wrapValidator @() @(Bool, Bool)
 
 validator :: Validator
-validator = Scripts.validatorScript typedValidator -- FIX ME!
+validator = Scripts.validatorScript typedValidator
 
 valHash :: Ledger.ValidatorHash
-valHash = Scripts.validatorHash typedValidator -- FIX ME!
+valHash = Scripts.validatorHash typedValidator
 
 scrAddress :: Ledger.Address
-scrAddress = scriptAddress validator -- FIX ME!
+scrAddress = scriptAddress validator
 
 type GiftSchema =
             Endpoint "give" Integer
