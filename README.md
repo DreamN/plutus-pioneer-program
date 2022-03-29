@@ -47,6 +47,44 @@
  - [Part 5 - NFT's](https://youtu.be/2lKN0ZL_EQU)
  - [Part 6 - Homework](https://youtu.be/j7yT2OqGY6U)
 
+### [Lecture #6](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x2sBWXHdFBRgkzPF6N-1LVi)
+
+ - [Part 1 - Introduction](https://youtu.be/TfWKxdli4eI)
+ - [Part 2 - The Minting Policy](https://youtu.be/w7_27sQIqkY)
+ - [Part 3 - Minting with the CLI](https://youtu.be/kfvzrC9J02k)
+ - [Part 4 - Deployment Scenarios](https://youtu.be/tW7uoY16gC0)
+ - [Part 5 - The Contracts](https://youtu.be/JgNhY_uuuGA)
+ - [Part 6 - Minting with the PAB](https://youtu.be/X6AyZIZ0vaE)
+ - [Part 7 - Summary](https://youtu.be/KmNOFltlRiA)
+
+### [Lecture #7](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x3Y5xvAsVqq46S9xkHopSGU)
+
+ - [Part 1 - Introduction](https://youtu.be/CLOHdIGgy90)
+ - [Part 2 - Commit Schemes](https://youtu.be/JXKf1JwVAOE)
+ - [Part 3 - Implementation without State Machines](https://youtu.be/yczHkTzDnpk)
+ - [Part 4 - State Machines](https://youtu.be/7jiaQRA-wKI)
+ - [Part 5 - Homework](https://youtu.be/J0rD_hmsMVo)
+
+### [Lecture #8](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x0UIixvEQG2Y2mmFL6__pEJ)
+
+ - [Part 1 - Introduction](https://youtu.be/mqHifIPefus)
+ - [Part 2 - Another State Machine Example: Token Sale](https://youtu.be/y5O58-NpnJ4)
+ - [Part 3 - Automatic Testing using Emulator Traces](https://youtu.be/LG9O8YbBXyM)
+ - [Part 4 - Test Coverage](https://youtu.be/wJQnQtLxi2E)
+ - [Part 5 - Interlude: Optics](https://youtu.be/naLA0OMIF1Q)
+ - [Part 6 - Property-Based Testing with QuickCheck](https://youtu.be/9mrYT9UXLO8)
+ - [Part 7 - Property-Based Testing of Plutus Contracts](https://youtu.be/49oAwySp6Ys)
+ - [Part 8 - Homework](https://youtu.be/u2Plwc3Gkrs)
+
+### [Lecture #9](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x2zSFnzWA4Gbr_AVTz-4rzf)
+
+ - [Part 1 - Introduction](https://youtu.be/433VbouC-30)
+ - [Part 2 - Simon Thompson: Marlowe Overview](https://youtu.be/ce_Yv8BlW7c)
+ - [Part 3 - Alexander Nemish: Marlowe in Plutus](https://youtu.be/hd-E5DCN8uc)
+ - [Part 4 - Brian Bush: The Marlowe CLI](https://youtu.be/Vx_ygegrY78)
+ - [Part 5 - Marlowe Playground Demo](https://youtu.be/l0LXjh8J-go)
+ - [Part 6 - Homework](https://youtu.be/iYdyUaq_enA)
+
 ## Code Examples
 
  - Lecture #1: [English Auction](code/week01)
@@ -54,6 +92,10 @@
  - Lecture #3: [Script Contexts & Parameterized Contracts](code/week03)
  - Lecture #4: [Monads, Traces & Contracts](code/week04)
  - Lecture #5: [Native Tokens](code/week05)
+ - Lecture #6: [Deployment](code/week06)
+ - Lecture #7: [State Machines](code/week07)
+ - Lecture #8: [Testing](code/week08)
+ - Lecture #9: [Marlowe](code/week09)
 
 ## Exercises
 
@@ -97,10 +139,30 @@
   - Implement a Mary-era-style minting policy in the [Homework1](code/week05/src/Week05/Homework1.hs) module.
   - Fix the token name to the empty ByteString in the NFT contract in the [Homework2](code/week05/src/Week05/Homework2.hs) module.
 
+- Week #6
+
+  - Try to replicate what is done in the lecture - minting tokens with the `cardano-cli` and the PAB.
+
+- Week #7
+  - Implement the game of "Rock, Paper, Scissors" using state machines.
+
+- Week #8
+
+  - Add a new operation close to the TokenSale-contract that allows the seller to close the contract and retrieve all remaining funds.
+  - Modify the tests accordingly.
+
+- Week #9m
+
+  - Modify the example Marlowe contract, so that Charlie must put down twice the deposit in the very beginning, which gets split between Alice and Bob if Charlie refuses to make his choice.
+
 ## Some Plutus Modules
 
   - `Ledger.Scripts`, contains functions related to untyped Plutus scripts.
   - `Ledger.Typed.Scripts`, contains functions related to typed Plutus scripts.
+  - `Plutus.Contract`, contains definitions and functions for writing offchain code.
+  - `Plutus.Contract.StateMachine`, contains definitions and functions for working with _state machines_.
+  - `Plutus.Contract.Test`, contains support for automatic tests.
+  - `Plutus.Contract.Test.ContractModel`, contains support for automatic property-based tests using `QuickCheck`.
   - `Plutus.V1.Ledger.Ada`, contains definitions and functions related to _ADA_-values.
   - `Plutus.V1.Ledger.Interval`, contains the definition of intervals and functions for working with them.
   - `Plutus.V1.Ledger.Value`, contains definitions and functions related to _values_.
